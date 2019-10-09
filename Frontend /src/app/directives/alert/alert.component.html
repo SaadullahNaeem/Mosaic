@@ -1,0 +1,3 @@
+<div *ngFor="let alert of alerts" (click)="removeAlert(alert)" class="{{ cssClass(alert) }} alert-dismissable  bounce animated" data-auto-dismiss role="alert">
+  {{alert.message}}
+</div>

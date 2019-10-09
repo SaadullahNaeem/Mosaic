@@ -1,0 +1,100 @@
+<div [hidden]="phoneAuth">
+	<div class="account-container register stacked">
+
+		<div class="content clearfix">
+
+			<form [formGroup]='form' (ngSubmit)='save()' novalidate>
+
+				<h1>Create Your Account</h1>
+
+				<div class="login-fields">
+
+					<p>Create your free account:</p>
+
+					<div class="field">
+						<label for="firstname">First Name:</label>
+						<input type="text" id="first_name" name="first_name" placeholder="First Name" class="login" formControlName="first_name"
+						/>
+					</div>
+					<!-- /field -->
+					<div class="form-control-feedback" *ngIf="form.controls.first_name.errors && (form.controls.first_name.dirty || form.controls.first_name.touched)">
+						<p *ngIf="form.controls.first_name.errors.required" style="color: #c61212;">First name is required</p>
+					</div>
+
+					<div class="field">
+						<label for="lastname">Last Name:</label>
+						<input type="text" id="last_name" name="last_name" placeholder="Last Name" class="login" formControlName="last_name" />
+					</div>
+					<!-- /field -->
+					<div class="form-control-feedback" *ngIf="form.controls.last_name.errors && (form.controls.last_name.dirty || form.controls.last_name.touched)">
+						<p *ngIf="form.controls.last_name.errors.required" style="color: #c61212;">Last name is required</p>
+					</div>
+
+					<div class="field">
+						<label for="email">Email Address:</label>
+						<input type="email" id="email" name="email" placeholder="Email" class="login" formControlName="email" />
+					</div>
+					<!-- /field -->
+					<div class="form-control-feedback" *ngIf="form.controls.email.errors && (form.controls.email.dirty || form.controls.email.touched)">
+						<p *ngIf="form.controls.email.errors.required" style="color: #c61212;">Email is required</p>
+						<p *ngIf="form.controls.email.errors.pattern" style="color: #c61212;">The email address must contain at least the @ character</p>
+						<p *ngIf="form.controls.email.errors.remote" class="text-center" style="color: #c61212;">
+							{{ form.controls.email.errors.remote }}
+						</p>
+					</div>
+
+					<div class="field">
+						<label for="password">Password:</label>
+						<input type="password" id="password1" name="password1" placeholder="Password" class="login" formControlName="password1" />
+					</div>
+					<!-- /field -->
+					<div class="form-control-feedback" *ngIf="form.controls.password1.errors && (form.controls.password1.dirty || form.controls.password1.touched)">
+						<p *ngIf="form.controls.password1.errors.required" style="color: #c61212;">Password is required</p>
+						<p *ngIf="form.controls.password1.errors.pattern" style="color: #c61212;">Must be 8 characters or longer. Must contain upper case, lower case and a number or symbol.</p>
+					</div>
+
+					<div class="field">
+						<label for="confirm_password">Confirm Password:</label>
+						<input type="password" id="password2" name="password2" placeholder="Confirm Password" class="login" formControlName="password2"
+						/>
+					</div>
+					<!-- /field -->
+					<div class="form-control-feedback" *ngIf="form.controls.password2.errors && (form.controls.password2.dirty || form.controls.password2.touched)">
+						<p *ngIf="form.controls.password2.errors.required" style="color: #c61212;">Password is required</p>
+					</div>
+					<div class="form-control-feedback" *ngIf="form.controls.password2.dirty || form.controls.password2.touched">
+						<p *ngIf="form.controls.password1.value != form.controls.password2.value" style="color: #c61212;">Both password must be identical.</p>
+					</div>
+				</div>
+				<!-- /login-fields -->
+
+				<div class="login-actions">
+
+					<span class="login-checkbox">
+						<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+						<label class="choice" for="Field">I have read and agree with the Terms of Use.</label>
+					</span>
+					<button type="submit" [disabled]="!form.valid" class="button btn btn-primary btn-large">Register</button>
+				</div>
+				<!-- .actions -->
+			</form>
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /account-container -->
+
+	<!-- Text Under Box -->
+	<div class="login-extra">
+		Already have an account?
+		<a routerLink="/signin">Login</a>
+	</div>
+	<!-- /login-extra -->
+</div>
+
+<div [hidden]="!phoneAuth">
+	<firebase-ui (signInSuccess)="successCallback($event)"></firebase-ui>
+</div>
+
+<div *ngIf="loading" class="loader-overlay">
+	<div class="loader"></div>
+</div>

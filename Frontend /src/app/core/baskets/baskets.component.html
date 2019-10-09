@@ -1,0 +1,184 @@
+<div id="content">
+
+	<div class="container">
+		
+		
+		
+		<div class="row">
+			
+			
+			<div class="span4">
+				
+				<h3>Top Performers</h3>
+				
+				<table class="table table-bordered table-striped">
+
+					<thead><tr>								
+						<th>Basket</th>
+						<th>YTD %</th>								
+					</tr></thead>
+					
+					<tbody><tr>
+						<td class="description">Privacy Coins</td>
+						<td class="value"><span>1123%</span></td>
+					</tr>
+					<tr>
+						<td class="description">Bank Settlements</td>
+						<td class="value"><span>927%</span></td>
+					</tr>
+					<tr>
+						<td class="description">Moonshots</td>
+						<td class="value"><span>834%</span></td>
+					</tr>
+
+				</tbody></table>
+				
+			</div> <!-- /.span4 -->
+			
+			
+			
+			<div class="span4">
+				
+				<h3>Top Rated</h3>
+				
+				<table class="table table-bordered table-striped">
+
+					<thead><tr>								
+						<th>Basket</th>
+						<th>Rank</th>								
+					</tr></thead>
+					
+					<tbody><tr>
+						<td class="description"><a href="#">Privacy Coins</a></td>
+						<td class="value"><span>1</span></td>
+					</tr>
+					<tr>
+						<td class="description"><a href="#">Bank Settlements</a></td>
+						<td class="value"><span>2</span></td>
+					</tr>
+					<tr>
+						<td class="description"><a href="#">Moonshots</a></td>
+						<td class="value"><span>3</span></td>
+					</tr>
+
+				</tbody></table>
+				
+			</div> <!-- /.span4 -->
+
+			<div class="span4">
+				
+				<h3>New Baskets</h3>
+				
+				<table class="table table-bordered table-striped">
+
+					<thead><tr>								
+						<th>Basket</th>
+						<th>Creator</th>								
+					</tr></thead>
+					
+					<tbody><tr>
+						<td class="description"><a href="#">Privacy Coins</a></td>
+						<td class="value"><span>totaylor</span></td>
+					</tr>
+					<tr>
+						<td class="description"><a href="#">Bank Settlements</a></td>
+						<td class="value"><span>totaylor</span></td>
+					</tr>
+					<tr>
+						<td class="description"><a href="#">Moonshots</a></td>
+						<td class="value"><span>totaylor</span></td>
+					</tr>
+
+				</tbody></table>
+				
+			</div> <!-- /.span4 -->
+			
+		</div> <!-- /.row -->
+
+		
+		<div class="row">
+
+			<div class="span6">
+				
+				<h3>Basket Allocation</h3>
+
+				<hr />
+
+				<ul id="myTab" class="nav nav-pills">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Currency <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#tab3" data-toggle="tab">BTC</a></li>
+							<li><a href="#tab4" data-toggle="tab">ETH</a></li>
+							<li><a href="#tab4" data-toggle="tab">USDT</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#tab3" data-toggle="tab">Like</a></li>
+							<li><a href="#tab4" data-toggle="tab">Favorite</a></li>
+						</ul>
+					</li>
+					<input type="text" class="input-medium" id="firstname" placeholder="Amount">
+				</ul>
+				
+				<a data-toggle="modal" href="#myModal"><ngx-charts-pie-chart
+					[view]="view"
+					[scheme]="colorScheme"
+					[results]="single"
+					[legend]="hideLegend"
+					[explodeSlices]="explodeSlices"
+					[labels]="showLabels"
+					[doughnut]="doughnut"
+					[gradient]="gradient"
+					(select)="onSelect($event)">
+				</ngx-charts-pie-chart></a>
+
+			</div> <!-- /.span6 -->
+
+			<div class="span6">
+
+				<h3>Basket Performance</h3>
+
+				<hr />
+				<br>
+
+				<ngx-charts-line-chart
+				[view]="view"
+				[scheme]="colorScheme"
+				[results]="multi"
+				[gradient]="gradient"
+				[xAxis]="showXAxis"
+				[yAxis]="showYAxis"
+				[legend]="showLegend"
+				[showXAxisLabel]="showXAxisLabel"
+				[showYAxisLabel]="showYAxisLabel"
+				[xAxisLabel]="xAxisLabel"
+				[yAxisLabel]="yAxisLabel"
+				[autoScale]="autoScale"
+				(select)="onSelect($event)">
+			</ngx-charts-line-chart>
+
+		</div> <!-- /.span6 -->
+
+
+	</div> <!-- /.row -->
+
+	<div class="modal fade hide" id="myModal">
+		<div class="modal-header">
+			<h3>Confirm Purchase</h3>
+		</div>
+		<div class="modal-body">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+		<div class="modal-footer">
+			<a href="javascript:;" class="btn" data-dismiss="modal">Cancel</a>
+			<a href="javascript:;" class="btn btn-primary">Buy</a>
+		</div>
+	</div>
+
+
+</div> <!-- /.container -->
+
+</div> <!-- /#content -->

@@ -1,0 +1,46 @@
+<div class="account-container login stacked">
+
+  <div class="content clearfix">
+
+    <form class="form-signin" [formGroup]='form' (ngSubmit)='change(form.value)' novalidate>
+
+      <h1>Change Password</h1>
+
+      <div class="login-fields">
+ 
+        <div class="field">
+          <label for="password">Password:</label>
+          <input type="password" id="password1" name="password1" placeholder="Password" class="login password-field" formControlName="new_password1" />
+        </div>
+        <!-- /field -->
+        <div class="form-control-feedback" *ngIf="form.controls.new_password1.errors && (form.controls.new_password1.dirty || form.controls.new_password1.touched)">
+          <p *ngIf="form.controls.new_password1.errors.required" style="color: #c61212;">Password is required</p>
+          <p *ngIf="form.controls.new_password1.errors.pattern" style="color: #c61212;">Must be 8 characters or longer. Must contain upper case, lower case and a number or symbol.</p>
+        </div>
+
+        <div class="field">
+          <label for="confirm_password">Confirm Password:</label>
+          <input type="password" id="password2" name="password2" class="login password-field"  placeholder="Confirm Password" formControlName="new_password2"
+          />
+        </div>
+        <!-- /field -->
+        <div class="form-control-feedback" *ngIf="form.controls.new_password2.errors && (form.controls.new_password2.dirty || form.controls.new_password2.touched)">
+          <p *ngIf="form.controls.new_password2.errors.required" style="color: #c61212;">Password is required</p>
+        </div>
+        <div class="form-control-feedback" *ngIf="form.controls.new_password2.dirty || form.controls.new_password2.touched">
+          <p *ngIf="form.controls.new_password1.value != form.controls.new_password2.value" style="color: #c61212;">Both password must be identical.</p>
+        </div>
+ 
+      </div>
+
+      <div class="login-actions">
+        <button type="submit" [disabled]="!form.valid" class="button btn btn-primary btn-block">Change</button>
+      </div>
+
+      <!-- .actions -->
+    </form>
+
+  </div>
+  <!-- /content -->
+</div>
+<!-- /account-container -->

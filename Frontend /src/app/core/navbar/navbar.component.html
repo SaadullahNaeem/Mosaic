@@ -1,0 +1,105 @@
+<div id="topbar">
+	
+	<div class="container">
+		
+		<a href="javascript:;" id="menu-trigger" class="dropdown-toggle" data-toggle="dropdown" data-target="#">
+			<i class="icon-cog"></i>
+		</a>
+		
+		<div id="top-nav">
+			<i style="color:white;">{{today | date:'fullDate'}}</i>
+			
+			<ul class="pull-right">
+				<li><i class="icon-user"></i> Welcome John Doe</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						Profile						
+						<b class="caret"></b>
+					</a>
+					
+					<ul class="dropdown-menu pull-right">
+						<li><a routerLink="/dashboard/settings">Settings</a></li>
+						<li><a (click)="logout()">Logout</a></li>
+					</ul> 
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						English					
+						<b class="caret"></b>
+					</a>
+					
+					<ul class="dropdown-menu pull-right">
+						<li><a routerLink="#">简体中文</a></li>
+						<li><a routerLink="#">繁體中文</a></li>
+						<li><a routerLink="#">한국어</a></li>
+						<li><a routerLink="#">日本語</a></li>
+						<li><a routerLink="#">русский</a></li>
+						<li><a routerLink="#">Español</a></li>
+						<li><a routerLink="#">Français</a></li>
+					</ul> 
+				</li>
+				<li><a routerLink="/dashboard/support">Support</a></li>
+			</ul>
+			
+		</div> <!-- /#top-nav -->
+		
+	</div> <!-- /.container -->
+	
+</div> <!-- /#topbar -->
+
+
+
+
+<div id="header">
+	
+	<div class="container">
+		
+		<div class="brand">Mosaic</div>
+		
+		<a href="javascript:void(0);" class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			<i class="icon-reorder"></i>
+		</a>
+		
+		<div class="nav-collapse">
+			<ul id="main-nav" class="nav pull-right">
+				<li class="nav-icon active">
+					<a routerLink="/dashboard">
+						<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+						<span>Home</span>        					
+					</a>
+				</li>
+
+				<li class="dropdown">					
+					<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-btc" aria-hidden="true"></i>
+						<span>Funds</span> 
+						<b class="caret"></b>
+					</a>	
+
+					<ul class="dropdown-menu">						
+						<li><a routerLink="/dashboard/wallets">Wallets</a></li>
+						<li><a routerLink="/dashboard/history">History</a></li>
+					</ul>    				
+				</li>
+
+				<li class="dropdown">					
+					<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-line-chart" aria-hidden="true"></i>
+						<span>Markets</span> 
+					</a>	   				
+				</li>
+
+				<li class="dropdown">					
+					<a routerLink="/dashboard/faq" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-question-circle" aria-hidden="true"></i>
+						<span>FAQ</span> 
+					</a>	   				
+				</li>
+				
+			</ul>
+			
+		</div> <!-- /.nav-collapse -->
+
+	</div> <!-- /.container -->
+	
+</div> <!-- /#header -->
